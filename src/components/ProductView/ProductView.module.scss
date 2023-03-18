@@ -1,0 +1,68 @@
+@import '../../styles/common';
+
+.product-view {
+  display: flex;
+  width: 1000px;
+  margin: 100px auto 0;
+}
+
+.product-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  border: solid 1px #000;
+  .image {
+    display: block;
+    width: 100%;
+  }
+}
+
+.product-detail {
+  margin-left: 50px;
+  .tag {
+    display: block;
+    width: 30px;
+    height: 30px;
+    font-size: 0;
+    border-radius: 2px;
+    margin-bottom: 15px;
+    &.viscose {
+      background-color: $viscose;
+    }
+    &.cotton {
+      background-color: $cotton;
+    }
+    &.linen {
+      background-color: $linen;
+    }
+  }
+  .category {
+    font-size: 50px;
+    font-weight: 500;
+  }
+}
+
+.opt {
+  margin-top: 20px;
+  .list {
+    .item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 10px 0;
+      .label {
+        display: block;
+        min-width: 120px;
+        flex-shrink: 0;
+        font-size: 24px;
+        font-weight: 500;
+      }
+      .value {
+        display: block;
+        font-size: 24px;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@import '../styles/common';
+
+.container {
+}
+.content {
+  width: 100%;
+  height: calc(100vh - 120px);
+  overflow: hidden;
+}
+.categoryList {
+  display: flex;
+  height: 100%;
+}

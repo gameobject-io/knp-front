@@ -1,0 +1,57 @@
+@import '../../styles/common';
+
+.category {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 20px 20px 0;
+  box-sizing: border-box;
+  .legend-item {
+    display: flex;
+    margin-right: 20px;
+    align-items: center;
+    .tag-name {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 2px;
+      &.viscose {
+        background-color: $viscose;
+      }
+      &.cotton {
+        background-color: $cotton;
+      }
+      &.linen {
+        background-color: $linen;
+      }
+    }
+    .tag-deskription {
+      font-size: 14px;
+      font-weight: 400;
+      margin-left: 5px;
+    }
+  }
+}
+
+.list {
+  height: 100%;
+  padding: 10px;
+  overflow: hidden scroll;
+  box-sizing: border-box;
+  .item {
+    width: 200px;
+    height: 100px;
+    margin: 10px;
+    cursor: pointer;
+    float: left;
+    &:hover {
+      background-color: beige;
+    }
+  }
+}

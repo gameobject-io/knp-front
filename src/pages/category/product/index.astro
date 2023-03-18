@@ -1,0 +1,20 @@
+---
+// Component Imports
+import '../../../styles/_reset.scss';
+import '../../../styles/_common.scss';
+import { App } from 'components/App';
+---
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover"
+    />
+    <title>K&P</title>
+  </head>
+  <body>
+    <App client:only="react" page="productView" />
+  </body>
+</html>

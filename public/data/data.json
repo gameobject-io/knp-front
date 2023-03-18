@@ -1,0 +1,28 @@
+[
+  {
+    "id": 0,
+    "category": "INTIMO DULL 2/94",
+    "legend": "viscose",
+    "opt": {
+      "location": "M1",
+      "photoPath": "http://leejuesongtest05.cafe24app.com/images/e117b397c2f1f507a510c4c63d2028ef.png",
+      "color": "red",
+      "lot": "23232",
+      "quantity": "12",
+      "remark": ""
+    }
+  },
+  {
+    "id": 1,
+    "category": "aINTIMO DULL 2/94",
+    "legend": "cotton",
+    "opt": {
+      "location": "M1",
+      "photoPath": "http://leejuesongtest05.cafe24app.com/images/e117b397c2f1f507a510c4c63d2028ef.png",
+      "color": "red",
+      "lot": "23232",
+      "quantity": "12",
+      "remark": ""
+    }
+  }
+]
