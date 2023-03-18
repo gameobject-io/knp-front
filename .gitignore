@@ -1,2 +1,9 @@
 node_modules
 # dist
+public
+src
+types
+astro.config.mjs
+package.json
+package-lock.json
+tsconfig.json
