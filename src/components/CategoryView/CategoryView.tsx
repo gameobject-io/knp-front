@@ -1,38 +1,67 @@
 // Import
-import { useEffect, useState } from 'react';
-import classNames from 'classnames/bind';
-import { categoryManager } from 'service/categoryManager';
+import { useEffect, useState } from "react";
+import classNames from "classnames/bind";
+import queryString from "query-string";
+import { categoryManager } from "service/categoryManager";
 
 // Components
 
 // CSS
-import styles from './CategoryView.module.scss';
+import styles from "./CategoryView.module.scss";
+import { ProductModal } from "components/Modal/ProductModal";
 const cx = classNames.bind(styles);
 
 interface Props {}
 
 export function CategoryView({}: Props) {
-  const [data, setData] = useState<category[] | null>(null);
+  const [data, setData] = useState<fabricData[] | null>(null);
+  const [legend, setLegend] = useState("");
+  const [categoryName, setCategoryName] = useState("");
+  const [selectData, setSelectData] = useState<fabricData | null>(null);
+  const [selectOpen, setSelectOpen] = useState(true);
 
-  const dataHandler = (data: category[]) => {
-    if (data !== null) {
-      setData(data);
-    }
+  const dataHandler = (data: fabricData[]) => {
+    setData(data);
+    console.log(data);
+  };
+
+  const selectHandler = (data: fabricData | null, open: boolean) => {
+    setSelectData(data);
+    setSelectOpen(open);
   };
 
   useEffect(() => {
-    categoryManager({ api: '/data/data.json', handler: dataHandler });
+    const host = "http://leejuesongtest06.cafe24app.com";
+    const parsed = queryString.parse(location.search);
+    if (parsed.legend !== undefined) {
+      setLegend(String(parsed.legend).toLocaleLowerCase());
+    }
+    if (parsed.categoryName !== undefined) {
+      setCategoryName(String(parsed.categoryName).toLocaleLowerCase());
+    }
+    categoryManager({
+      api: `${host}/apis/v1/fabrics?categoryId=${parsed.categoryId}`,
+      handler: dataHandler,
+    });
   }, []);
 
   return (
     <>
-      <div className={cx('category-view')}>
-        <div className={cx('headline')}>
-          <span className={cx('tag', 'viscose')}>TAG</span>
-          <span className={cx('title')}>CLASSIC 1/35</span>
+      {selectOpen && selectData !== null && (
+        <ProductModal
+          data={selectData}
+          selectHandler={selectHandler}
+          categoryName={categoryName}
+          legend={legend}
+        />
+      )}
+      <div className={cx("category-view")}>
+        <div className={cx("headline")}>
+          <span className={cx("tag", legend)}></span>
+          <span className={cx("title")}>{categoryName}</span>
         </div>
-        <div className={cx('category-table')}>
-          <table className={cx('table')}>
+        <div className={cx("category-table")}>
+          <table className={cx("table")}>
             <thead>
               <tr>
                 <th>위치</th>
@@ -44,19 +73,25 @@ export function CategoryView({}: Props) {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>R3</td>
-                <td>
-                  <img
-                    className={cx('image')}
-                    src="http://leejuesongtest05.cafe24app.com/images/155297434a7ed60e7f1c2a2dbd2058ba.png"
-                  />
-                </td>
-                <td>IV</td>
-                <td>R3IV22-325544</td>
-                <td>44</td>
-                <td>Temp</td>
-              </tr>
+              {data?.map((item, index) => {
+                return (
+                  <tr
+                    key={index}
+                    onClick={() => {
+                      selectHandler(item, true);
+                    }}
+                  >
+                    <td>{item.location}</td>
+                    <td>
+                      <img className={cx("image")} src={item.photoPath} />
+                    </td>
+                    <td>{item.color}</td>
+                    <td>{item.lot}</td>
+                    <td>{item.quantity}</td>
+                    <td>{item.remark}</td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>

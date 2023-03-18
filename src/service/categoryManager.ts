@@ -1,8 +1,8 @@
-import axios from 'axios';
+import axios from "axios";
 
 interface Props {
   api: string;
-  handler: (data: category[]) => void;
+  handler: (data: any) => void;
 }
 
 export function categoryManager({ api, handler }: Props) {
@@ -10,7 +10,7 @@ export function categoryManager({ api, handler }: Props) {
     axios
       .get(api, {
         headers: {
-          'Cache-Control': 'no-cache',
+          "Cache-Control": "no-cache",
         },
       })
       .then((res) => {

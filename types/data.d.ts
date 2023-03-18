@@ -1,13 +1,18 @@
 interface category {
   id: number;
-  category: string;
+  categoryName: string;
   legend: string;
-  opt: {
-    location: string;
-    photoPath: string;
-    color: string;
-    lot: string;
-    quantity: string;
-    remark: string;
-  };
+}
+
+interface fabricData {
+  categoryId: number;
+  color: string;
+  createdAt: number;
+  id: number;
+  location: string;
+  lot: string;
+  photoPath: string;
+  quantity: string;
+  remark: string;
+  updatedAt: number;
 }

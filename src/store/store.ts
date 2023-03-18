@@ -1,3 +1,5 @@
-import { atom } from 'nanostores';
+import { atom } from "nanostores";
 
-export const storeFilter = atom('');
+export const storeCategory = atom<category[]>([]);
+export const storeData = atom<category[]>([]);
+export const storeFilter = atom("");

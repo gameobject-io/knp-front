@@ -1,4 +1,4 @@
-@import '../../styles/common';
+@import "../../styles/common";
 
 .category {
   position: relative;
@@ -6,12 +6,26 @@
   height: 100%;
 }
 
+.btn-color-board {
+  position: absolute;
+  top: -12px;
+  right: 12px;
+  padding: 10px 15px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 0.35em;
+  background-color: #7f859c;
+  cursor: pointer;
+}
+
 .legend {
+  position: relative;
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 20px 20px 0;
   box-sizing: border-box;
+  margin: 0 12px;
   .legend-item {
     display: flex;
     margin-right: 20px;
@@ -32,26 +46,27 @@
       }
     }
     .tag-deskription {
-      font-size: 14px;
-      font-weight: 400;
-      margin-left: 5px;
+      font-size: 22px;
+      color: #353c5d;
+      font-weight: 500;
+      margin-left: 15px;
     }
   }
 }
 
 .list {
-  height: 100%;
-  padding: 10px;
-  overflow: hidden scroll;
-  box-sizing: border-box;
+  margin-top: 30px;
+  overflow: hidden;
   .item {
-    width: 200px;
-    height: 100px;
-    margin: 10px;
+    width: 25%;
+    height: 308px;
+    padding: 12px;
+    box-sizing: border-box;
     cursor: pointer;
     float: left;
-    &:hover {
-      background-color: beige;
+    .link {
+      display: block;
+      height: 100%;
     }
   }
 }
