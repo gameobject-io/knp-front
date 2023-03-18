@@ -1,5 +1,4 @@
 // Import
-import { useEffect, useState } from "react";
 import classNames from "classnames/bind";
 
 // Components
@@ -7,17 +6,14 @@ import { AppHeader } from "./AppHeader/AppHeader";
 import { CategoryList } from "./CategoryList/CategoryList";
 import { CategoryView } from "./CategoryView/CategoryView";
 import { AppFooter } from "./AppFooter/AppFooter";
-import { Modal } from "./Modal/Modal";
-import { categoryManager } from "service/categoryManager";
-import { Search } from "./Search/Search";
-import { ProductModal } from "./Modal/ProductModal";
 
 // CSS
 import styles from "./App.module.scss";
+import { Modal } from "./Modal/Modal";
 
 // Store
+import { storeModal } from "store/store";
 import { useStore } from "@nanostores/react";
-import { storeCategory, storeData, storeFilter } from "../store/store";
 
 const cx = classNames.bind(styles);
 
@@ -26,12 +22,11 @@ interface Props {
 }
 
 export function App({ page }: Props) {
-  const filterHandler = (key: string) => {
-    storeFilter.set(key);
-  };
+  const modal = useStore(storeModal);
 
   return (
     <>
+      {modal && <Modal />}
       <div className={cx("container")}>
         <AppHeader />
         <div className={cx("content")}>

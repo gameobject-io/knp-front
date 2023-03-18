@@ -1,5 +1,8 @@
 @import "../../styles/common";
 
+$timing: cubic-bezier(0.075, 0.82, 0.165, 1);
+$duration: 0.75s;
+
 .header {
   position: relative;
   width: 100%;
@@ -8,14 +11,29 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all $duration $timing;
+
+  &[data-focus="true"] {
+    height: 200px;
+    .logo {
+      top: 35px;
+    }
+    .description {
+      top: 165px;
+      opacity: 0;
+    }
+  }
 }
 
 .logo {
-  margin-bottom: 26px;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all $duration $timing;
   .knp-logo {
     display: block;
     width: 170px;
-    margin: 0 auto;
     .image {
       display: block;
       width: 100%;
@@ -24,13 +42,21 @@
 }
 
 .description {
+  position: absolute;
+  top: 230px;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
-  font-size: 22px;
-  font-weight: 300;
-  color: #d2dcff;
-  &.small {
-    font-size: 16px;
-    margin-top: 6px;
+  transition: all $duration $timing;
+  .txt {
+    display: block;
+    font-size: 22px;
+    font-weight: 300;
+    color: #d2dcff;
+    &.small {
+      font-size: 16px;
+      margin-top: 6px;
+    }
   }
 }
 

@@ -1,5 +1,4 @@
 // Import
-import { useEffect, useState } from "react";
 import classNames from "classnames/bind";
 
 // CSS

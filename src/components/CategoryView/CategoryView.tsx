@@ -9,6 +9,8 @@ import { categoryManager } from "service/categoryManager";
 // CSS
 import styles from "./CategoryView.module.scss";
 import { ProductModal } from "components/Modal/ProductModal";
+import { useStore } from "@nanostores/react";
+import { storeHost } from "store/store";
 const cx = classNames.bind(styles);
 
 interface Props {}
@@ -19,10 +21,10 @@ export function CategoryView({}: Props) {
   const [categoryName, setCategoryName] = useState("");
   const [selectData, setSelectData] = useState<fabricData | null>(null);
   const [selectOpen, setSelectOpen] = useState(true);
+  const host = useStore(storeHost);
 
   const dataHandler = (data: fabricData[]) => {
     setData(data);
-    console.log(data);
   };
 
   const selectHandler = (data: fabricData | null, open: boolean) => {
@@ -31,7 +33,6 @@ export function CategoryView({}: Props) {
   };
 
   useEffect(() => {
-    const host = "http://leejuesongtest06.cafe24app.com";
     const parsed = queryString.parse(location.search);
     if (parsed.legend !== undefined) {
       setLegend(String(parsed.legend).toLocaleLowerCase());

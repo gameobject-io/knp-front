@@ -1,28 +1,352 @@
 [
   {
-    "id": 0,
-    "category": "INTIMO DULL 2/94",
-    "legend": "viscose",
-    "opt": {
-      "location": "M1",
-      "photoPath": "http://leejuesongtest05.cafe24app.com/images/e117b397c2f1f507a510c4c63d2028ef.png",
-      "color": "red",
-      "lot": "23232",
-      "quantity": "12",
-      "remark": ""
-    }
+    "id": 1,
+    "categoryName": "BLED",
+    "legend": "LINEN"
+  },
+  {
+    "id": 2,
+    "categoryName": "AGITATO DULL",
+    "legend": "LINEN"
+  },
+  {
+    "id": 3,
+    "categoryName": "CLASSIC",
+    "legend": "VISCOSE"
+  },
+  {
+    "id": 4,
+    "categoryName": "cate11234",
+    "legend": "VISCOSE"
+  },
+  {
+    "id": 5,
+    "categoryName": "Textile",
+    "legend": "COTTON"
+  },
+  {
+    "id": 6,
+    "categoryName": "Material",
+    "legend": "COTTON"
+  },
+  {
+    "id": 7,
+    "categoryName": "Denim",
+    "legend": "LINEN"
   },
   {
     "id": 1,
-    "category": "aINTIMO DULL 2/94",
-    "legend": "cotton",
-    "opt": {
-      "location": "M1",
-      "photoPath": "http://leejuesongtest05.cafe24app.com/images/e117b397c2f1f507a510c4c63d2028ef.png",
-      "color": "red",
-      "lot": "23232",
-      "quantity": "12",
-      "remark": ""
-    }
+    "categoryName": "BLED",
+    "legend": "LINEN"
+  },
+  {
+    "id": 2,
+    "categoryName": "AGITATO DULL",
+    "legend": "LINEN"
+  },
+  {
+    "id": 3,
+    "categoryName": "CLASSIC",
+    "legend": "VISCOSE"
+  },
+  {
+    "id": 4,
+    "categoryName": "cate11234",
+    "legend": "VISCOSE"
+  },
+  {
+    "id": 5,
+    "categoryName": "Textile",
+    "legend": "COTTON"
+  },
+  {
+    "id": 6,
+    "categoryName": "Material",
+    "legend": "COTTON"
+  },
+  {
+    "id": 7,
+    "categoryName": "Denim",
+    "legend": "LINEN"
+  },
+  {
+    "id": 7,
+    "categoryName": "Denim",
+    "legend": "LINEN"
+  },
+  {
+    "id": 1,
+    "categoryName": "BLED",
+    "legend": "LINEN"
+  },
+  {
+    "id": 2,
+    "categoryName": "AGITATO DULL",
+    "legend": "LINEN"
+  },
+  {
+    "id": 3,
+    "categoryName": "CLASSIC",
+    "legend": "VISCOSE"
+  },
+  {
+    "id": 4,
+    "categoryName": "cate11234",
+    "legend": "VISCOSE"
+  },
+  {
+    "id": 5,
+    "categoryName": "Textile",
+    "legend": "COTTON"
+  },
+  {
+    "id": 6,
+    "categoryName": "Material",
+    "legend": "COTTON"
+  },
+  {
+    "id": 7,
+    "categoryName": "Denim",
+    "legend": "LINEN"
+  },
+  {
+    "id": 7,
+    "categoryName": "Denim",
+    "legend": "LINEN"
+  },
+  {
+    "id": 1,
+    "categoryName": "BLED",
+    "legend": "LINEN"
+  },
+  {
+    "id": 2,
+    "categoryName": "AGITATO DULL",
+    "legend": "LINEN"
+  },
+  {
+    "id": 3,
+    "categoryName": "CLASSIC",
+    "legend": "VISCOSE"
+  },
+  {
+    "id": 4,
+    "categoryName": "cate11234",
+    "legend": "VISCOSE"
+  },
+  {
+    "id": 5,
+    "categoryName": "Textile",
+    "legend": "COTTON"
+  },
+  {
+    "id": 6,
+    "categoryName": "Material",
+    "legend": "COTTON"
+  },
+  {
+    "id": 7,
+    "categoryName": "Denim",
+    "legend": "LINEN"
+  },
+  {
+    "id": 7,
+    "categoryName": "Denim",
+    "legend": "LINEN"
+  },
+  {
+    "id": 1,
+    "categoryName": "BLED",
+    "legend": "LINEN"
+  },
+  {
+    "id": 2,
+    "categoryName": "AGITATO DULL",
+    "legend": "LINEN"
+  },
+  {
+    "id": 3,
+    "categoryName": "CLASSIC",
+    "legend": "VISCOSE"
+  },
+  {
+    "id": 4,
+    "categoryName": "cate11234",
+    "legend": "VISCOSE"
+  },
+  {
+    "id": 5,
+    "categoryName": "Textile",
+    "legend": "COTTON"
+  },
+  {
+    "id": 6,
+    "categoryName": "Material",
+    "legend": "COTTON"
+  },
+  {
+    "id": 7,
+    "categoryName": "Denim",
+    "legend": "LINEN"
+  },
+  {
+    "id": 7,
+    "categoryName": "Denim",
+    "legend": "LINEN"
+  },
+  {
+    "id": 1,
+    "categoryName": "BLED",
+    "legend": "LINEN"
+  },
+  {
+    "id": 2,
+    "categoryName": "AGITATO DULL",
+    "legend": "LINEN"
+  },
+  {
+    "id": 3,
+    "categoryName": "CLASSIC",
+    "legend": "VISCOSE"
+  },
+  {
+    "id": 4,
+    "categoryName": "cate11234",
+    "legend": "VISCOSE"
+  },
+  {
+    "id": 5,
+    "categoryName": "Textile",
+    "legend": "COTTON"
+  },
+  {
+    "id": 6,
+    "categoryName": "Material",
+    "legend": "COTTON"
+  },
+  {
+    "id": 7,
+    "categoryName": "Denim",
+    "legend": "LINEN"
+  },
+  {
+    "id": 7,
+    "categoryName": "Denim",
+    "legend": "LINEN"
+  },
+  {
+    "id": 1,
+    "categoryName": "BLED",
+    "legend": "LINEN"
+  },
+  {
+    "id": 2,
+    "categoryName": "AGITATO DULL",
+    "legend": "LINEN"
+  },
+  {
+    "id": 3,
+    "categoryName": "CLASSIC",
+    "legend": "VISCOSE"
+  },
+  {
+    "id": 4,
+    "categoryName": "cate11234",
+    "legend": "VISCOSE"
+  },
+  {
+    "id": 5,
+    "categoryName": "Textile",
+    "legend": "COTTON"
+  },
+  {
+    "id": 6,
+    "categoryName": "Material",
+    "legend": "COTTON"
+  },
+  {
+    "id": 7,
+    "categoryName": "Denim",
+    "legend": "LINEN"
+  },
+  {
+    "id": 7,
+    "categoryName": "Denim",
+    "legend": "LINEN"
+  },
+  {
+    "id": 1,
+    "categoryName": "BLED",
+    "legend": "LINEN"
+  },
+  {
+    "id": 2,
+    "categoryName": "AGITATO DULL",
+    "legend": "LINEN"
+  },
+  {
+    "id": 3,
+    "categoryName": "CLASSIC",
+    "legend": "VISCOSE"
+  },
+  {
+    "id": 4,
+    "categoryName": "cate11234",
+    "legend": "VISCOSE"
+  },
+  {
+    "id": 5,
+    "categoryName": "Textile",
+    "legend": "COTTON"
+  },
+  {
+    "id": 6,
+    "categoryName": "Material",
+    "legend": "COTTON"
+  },
+  {
+    "id": 7,
+    "categoryName": "Denim",
+    "legend": "LINEN"
+  },
+  {
+    "id": 7,
+    "categoryName": "Denim",
+    "legend": "LINEN"
+  },
+  {
+    "id": 1,
+    "categoryName": "BLED",
+    "legend": "LINEN"
+  },
+  {
+    "id": 2,
+    "categoryName": "AGITATO DULL",
+    "legend": "LINEN"
+  },
+  {
+    "id": 3,
+    "categoryName": "CLASSIC",
+    "legend": "VISCOSE"
+  },
+  {
+    "id": 4,
+    "categoryName": "cate11234",
+    "legend": "VISCOSE"
+  },
+  {
+    "id": 5,
+    "categoryName": "Textile",
+    "legend": "COTTON"
+  },
+  {
+    "id": 6,
+    "categoryName": "Material",
+    "legend": "COTTON"
+  },
+  {
+    "id": 7,
+    "categoryName": "Denim",
+    "legend": "LINEN"
   }
 ]

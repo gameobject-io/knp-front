@@ -12,62 +12,36 @@ const cx = classNames.bind(styles);
 
 // Store
 import { useStore } from "@nanostores/react";
-import { storeCategory, storeData, storeFilter } from "../../store/store";
+import {
+  storeCategory,
+  storeFiltering,
+  storeHost,
+  storeLoading,
+  storeModal,
+} from "../../store/store";
+import { Loading } from "components/Loading/Loading";
 
 interface Props {}
 
 export function CategoryList({}: Props) {
-  const category = useStore(storeCategory);
+  const filtering = useStore(storeFiltering);
+  const loading = useStore(storeLoading);
+  const host = useStore(storeHost);
 
   const dataHandler = (data: category[]) => {
     storeCategory.set(data);
-    console.log(data);
   };
 
   useEffect(() => {
-    const host = "http://leejuesongtest06.cafe24app.com";
     categoryManager({
       api: `${host}/apis/v1/fabric-categories`,
       handler: dataHandler,
     });
+    // categoryManager({
+    //   api: `/data/data.json`,
+    //   handler: dataHandler,
+    // });
   }, []);
-
-  // useEffect(() => {
-  //   // setCategoryList(data);
-  //   // console.log()
-  // }, [data]);
-
-  // const dataHandler = (data: category[]) => {
-  //   if (data !== null) {
-  //     setData(data);
-  //   }
-  // };
-
-  // const dataFiltering = () => {
-  //   const defaultData = data?.filter(
-  //     (item) =>
-  //       item.category.charAt(0).toLocaleLowerCase() ===
-  //       filter.toLocaleLowerCase()
-  //   );
-  //   setFilterData(defaultData);
-  // };
-
-  // const dataSearchFiltering = () => {
-  //   const defaultData = data?.filter(
-  //     (item) =>
-  //       item.category.charAt(0).toLocaleLowerCase() ===
-  //       filter.toLocaleLowerCase()
-  //   );
-  //   console.log(defaultData);
-  // };
-
-  // useEffect(() => {
-  //   categoryManager({ api: "/data/data.json", handler: dataHandler });
-  // }, []);
-
-  // useEffect(() => {
-  //   dataFiltering();
-  // }, [filter]);
 
   return (
     <>
@@ -86,23 +60,37 @@ export function CategoryList({}: Props) {
             <dd className={cx("tag-deskription")}>LINEN</dd>
           </dl>
         </div>
-        <button type="button" className={cx("btn-color-board")}>
+        <button
+          type="button"
+          className={cx("btn-color-board")}
+          onClick={() => {
+            storeModal.set(true);
+          }}
+        >
           COLOR TABLE
         </button>
-        <ul className={cx("list")}>
-          {category?.map((item, index) => {
-            return (
-              <li key={index} className={cx("item")}>
-                <a
-                  href={`/categoryView/?categoryId=${item.id}&categoryName=${item.categoryName}&legend=${item.legend}`}
-                  className={cx("link")}
-                >
-                  <CategoryCard data={item} />
-                </a>
-              </li>
-            );
-          })}
-        </ul>
+        {loading ? (
+          <div className={cx("loading")}>
+            <Loading />
+          </div>
+        ) : filtering.length <= 0 ? (
+          <div className={cx("empty")}>일치 하는 검색 결과가 없습니다</div>
+        ) : (
+          <ul className={cx("list")}>
+            {filtering?.map((item, index) => {
+              return (
+                <li key={index} className={cx("item")}>
+                  <a
+                    href={`/categoryView/?categoryId=${item.id}&categoryName=${item.categoryName}&legend=${item.legend}`}
+                    className={cx("link")}
+                  >
+                    <CategoryCard data={item} />
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        )}
       </div>
     </>
   );
