@@ -12,5 +12,9 @@ tsconfig.json
 # package.json
 # package-lock.json
 # tsconfig.json
+<<<<<<< HEAD
 dist
 
+=======
+# dist
+>>>>>>> e76500e (깃)
