@@ -4,5 +4,5 @@ types
 astro.config.mjs
 package.json
 package-lock.json
-tsconfig.jsonW
+tsconfig.json
 # dist
