@@ -1,0 +1,14 @@
+@import "../styles/common";
+
+.container {
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 38px;
+  box-sizing: border-box;
+}
+.content {
+  position: relative;
+  width: 1200px;
+  min-height: 500px;
+  margin: 120px auto 0;
+}
