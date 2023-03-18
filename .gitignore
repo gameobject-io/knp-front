@@ -1,8 +1,2 @@
 node_modules
-# dist
-src
-types
-astro.config.mjs
-package.json
-package-lock.json
-tsconfig.json
+dist
