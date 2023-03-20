@@ -32,6 +32,8 @@ export function CategoryView({}: Props) {
   const selectHandler = (data: fabricData | null, open: boolean) => {
     setSelectData(data);
     setSelectOpen(open);
+
+    console.log(data);
   };
 
   useEffect(() => {
@@ -88,7 +90,11 @@ export function CategoryView({}: Props) {
                     <td>
                       <img
                         className={cx("image")}
-                        src={`${host}${item.photoPath}`}
+                        src={
+                          item.photoPath === "/images/fabrics/null"
+                            ? "/images/fabric-icon.png"
+                            : `${host}${item.photoPath}`
+                        }
                       />
                     </td>
                     <td>{item.color}</td>

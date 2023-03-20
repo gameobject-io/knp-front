@@ -39,7 +39,14 @@ export function ProductModal({
           </button>
           <div className={cx("product-modal-scroll")}>
             <div className={cx("product-image")}>
-              <img className={cx("image")} src={`${host}${data?.photoPath}`} />
+              <img
+                className={cx("image")}
+                src={
+                  data?.photoPath === "/images/fabrics/null"
+                    ? "/images/fabric-icon.png"
+                    : `${host}${data?.photoPath}`
+                }
+              />
             </div>
             <div className={cx("product-detail")}>
               <div className={cx("title")}>
