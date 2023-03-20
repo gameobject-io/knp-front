@@ -1,16 +1,34 @@
 // Import
 import classNames from "classnames/bind";
+import { useEffect, useState } from "react";
+import { categoryManager } from "service/categoryManager";
 
 // CSS
 import styles from "./Modal.module.scss";
 const cx = classNames.bind(styles);
 
 // Store
-import { storeModal } from "store/store";
+import { storeModal, storeHost } from "store/store";
+import { useStore } from "@nanostores/react";
 
 interface Props {}
 
 export function Modal({}: Props) {
+  const [colorTable, setColorTable] = useState<colorTable | null>(null);
+  const host = useStore(storeHost);
+
+  const colorTableDataHanlder = (data: any) => {
+    setColorTable(data);
+    console.log(data);
+  };
+
+  useEffect(() => {
+    categoryManager({
+      api: `${host}/apis/v1/color-tables/expose`,
+      handler: colorTableDataHanlder,
+    });
+  }, []);
+
   return (
     <>
       <div className={cx("modal")}>
@@ -25,7 +43,12 @@ export function Modal({}: Props) {
             Close
           </button>
           <figure className={cx("figure")}>
-            <img className={cx("image")} src="/images/sample.png" />
+            {colorTable !== null && (
+              <img
+                className={cx("image")}
+                src={`${host}${colorTable?.photoPath}`}
+              />
+            )}
           </figure>
         </div>
         <div

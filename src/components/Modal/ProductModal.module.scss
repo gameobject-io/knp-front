@@ -20,6 +20,10 @@
   height: 40px;
   font-size: 0;
   cursor: pointer;
+  @media (max-width: 1200px) {
+    top: -50px;
+    right: -5px;
+  }
   &:after {
     font-family: "Material Icons";
     content: "\e5cd";
@@ -48,7 +52,23 @@
   z-index: 200;
   border-radius: 1em;
   box-shadow: 0px 10px 30px rgba($color: #000000, $alpha: 0.1);
-  display: flex;
+
+  @media (max-width: 1200px) {
+    width: 90%;
+    height: 70%;
+  }
+
+  .product-modal-scroll {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    @media (max-width: 1200px) {
+      display: block;
+      width: 100%;
+      height: 100%;
+      overflow: hidden scroll;
+    }
+  }
 
   // Animation
   transform: scale(0.5);
@@ -67,6 +87,12 @@
     padding: 50px;
     box-sizing: border-box;
 
+    @media (max-width: 1200px) {
+      width: 300px;
+      height: 300px;
+      margin: 30px auto 0;
+    }
+
     .image {
       display: block;
       width: 100%;
@@ -79,6 +105,11 @@
     flex-direction: column;
     justify-content: center;
     width: 50%;
+    @media (max-width: 1200px) {
+      width: 100%;
+      padding: 0 30px;
+      box-sizing: border-box;
+    }
     .title {
       display: flex;
       margin-bottom: 20px;
@@ -90,6 +121,11 @@
         border-radius: 2px;
         font-size: 0;
         margin-right: 18px;
+        @media (max-width: 1200px) {
+          width: 20px;
+          height: 20px;
+          margin-right: 12px;
+        }
         &.viscose {
           background-color: $viscose;
         }
@@ -104,10 +140,16 @@
         font-size: 32px;
         color: #353c5d;
         font-weight: 600;
+        @media (max-width: 1200px) {
+          font-size: 24px;
+        }
       }
     }
     .opt {
       margin-right: 50px;
+      @media (max-width: 1200px) {
+        margin: 0;
+      }
       .list {
         .item {
           border-top: solid 1px #e6e6e6;
@@ -115,6 +157,9 @@
           display: flex;
           align-items: center;
           width: 100%;
+          @media (max-width: 1200px) {
+            display: block;
+          }
           &:first-child {
             border-top: 0;
           }
@@ -125,6 +170,10 @@
             font-weight: 600;
             font-size: 18px;
             line-height: 2em;
+            @media (max-width: 1200px) {
+              width: 100%;
+              line-height: 2.2em;
+            }
           }
           .value {
             flex-shrink: 0;
@@ -134,6 +183,11 @@
             font-weight: 400;
             font-size: 16px;
             line-height: 1.2em;
+            @media (max-width: 1200px) {
+              display: block;
+              width: 100%;
+              line-height: 1.4em;
+            }
             &:before {
               content: "";
               display: block;
@@ -141,6 +195,9 @@
               height: 20px;
               background-color: #e6e6e6;
               margin-right: 30px;
+              @media (max-width: 1200px) {
+                content: none;
+              }
             }
           }
         }

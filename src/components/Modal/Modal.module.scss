@@ -16,6 +16,10 @@
   width: 100%;
   z-index: 3100;
 
+  @media (max-width: 1200px) {
+    width: 90%;
+  }
+
   // Animation
   transform: scale(0.5);
   opacity: 0;
@@ -60,6 +64,10 @@
   height: 40px;
   font-size: 0;
   cursor: pointer;
+  @media (max-width: 1200px) {
+    top: -50px;
+    right: -5px;
+  }
   &:after {
     font-family: "Material Icons";
     content: "\e5cd";

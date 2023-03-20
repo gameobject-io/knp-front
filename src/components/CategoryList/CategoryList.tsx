@@ -5,6 +5,7 @@ import { categoryManager } from "service/categoryManager";
 
 // Components
 import { CategoryCard } from "./CategoryCard";
+import { Loading } from "components/Loading/Loading";
 
 // CSS
 import styles from "./CategoryList.module.scss";
@@ -19,7 +20,6 @@ import {
   storeLoading,
   storeModal,
 } from "../../store/store";
-import { Loading } from "components/Loading/Loading";
 
 interface Props {}
 
@@ -27,20 +27,14 @@ export function CategoryList({}: Props) {
   const filtering = useStore(storeFiltering);
   const loading = useStore(storeLoading);
   const host = useStore(storeHost);
-
   const dataHandler = (data: category[]) => {
     storeCategory.set(data);
   };
-
   useEffect(() => {
     categoryManager({
       api: `${host}/apis/v1/fabric-categories`,
       handler: dataHandler,
     });
-    // categoryManager({
-    //   api: `/data/data.json`,
-    //   handler: dataHandler,
-    // });
   }, []);
 
   return (

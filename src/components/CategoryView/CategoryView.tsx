@@ -9,9 +9,11 @@ import { categoryManager } from "service/categoryManager";
 // CSS
 import styles from "./CategoryView.module.scss";
 import { ProductModal } from "components/Modal/ProductModal";
+const cx = classNames.bind(styles);
+
+// Store
 import { useStore } from "@nanostores/react";
 import { storeHost } from "store/store";
-const cx = classNames.bind(styles);
 
 interface Props {}
 
@@ -84,7 +86,10 @@ export function CategoryView({}: Props) {
                   >
                     <td>{item.location}</td>
                     <td>
-                      <img className={cx("image")} src={item.photoPath} />
+                      <img
+                        className={cx("image")}
+                        src={`${host}${item.photoPath}`}
+                      />
                     </td>
                     <td>{item.color}</td>
                     <td>{item.lot}</td>

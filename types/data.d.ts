@@ -16,3 +16,10 @@ interface fabricData {
   remark: string;
   updatedAt: number;
 }
+
+interface colorTable {
+  expose: boolean;
+  id: number;
+  photoPath: string;
+  remark: string;
+}
