@@ -16,3 +16,9 @@ interface fabricData {
   remark: string;
   updatedAt: number;
 }
+
+interface tags {
+  id: number;
+  legendName: string;
+  color: string;
+}

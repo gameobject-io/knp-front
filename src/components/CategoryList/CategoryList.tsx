@@ -18,6 +18,7 @@ import {
   storeHost,
   storeLoading,
   storeModal,
+  storeTags,
 } from "../../store/store";
 import { Loading } from "components/Loading/Loading";
 
@@ -27,9 +28,15 @@ export function CategoryList({}: Props) {
   const filtering = useStore(storeFiltering);
   const loading = useStore(storeLoading);
   const host = useStore(storeHost);
+  const tags = useStore(storeTags);
 
   const dataHandler = (data: category[]) => {
     storeCategory.set(data);
+    console.log(data);
+  };
+
+  const tagHandler = (data: any) => {
+    storeTags.set(data);
   };
 
   useEffect(() => {
@@ -37,28 +44,28 @@ export function CategoryList({}: Props) {
       api: `${host}/apis/v1/fabric-categories`,
       handler: dataHandler,
     });
-    // categoryManager({
-    //   api: `/data/data.json`,
-    //   handler: dataHandler,
-    // });
+
+    categoryManager({
+      api: `${host}/apis/v1/fabric-category-legends`,
+      handler: tagHandler,
+    });
   }, []);
 
   return (
     <>
       <div className={cx("category")}>
         <div className={cx("legend")}>
-          <dl className={cx("legend-item")}>
-            <dt className={cx("tag-name", "viscose")}></dt>
-            <dd className={cx("tag-deskription")}>VISCOSE</dd>
-          </dl>
-          <dl className={cx("legend-item")}>
-            <dt className={cx("tag-name", "cotton")}></dt>
-            <dd className={cx("tag-deskription")}>COTTON</dd>
-          </dl>
-          <dl className={cx("legend-item")}>
-            <dt className={cx("tag-name", "linen")}></dt>
-            <dd className={cx("tag-deskription")}>LINEN</dd>
-          </dl>
+          {tags.map((item, index) => {
+            return (
+              <dl className={cx("legend-item")} key={index}>
+                <dt
+                  className={cx("tag-name")}
+                  style={{ backgroundColor: item.color }}
+                ></dt>
+                <dd className={cx("tag-deskription")}>{item.legendName}</dd>
+              </dl>
+            );
+          })}
         </div>
         <button
           type="button"
