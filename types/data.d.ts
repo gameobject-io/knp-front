@@ -1,7 +1,7 @@
 interface category {
   id: number;
   categoryName: string;
-  legend: string;
+  legendId: string;
 }
 
 interface fabricData {
@@ -17,16 +17,15 @@ interface fabricData {
   updatedAt: number;
 }
 
-<<<<<<< HEAD
 interface tags {
   id: number;
   legendName: string;
   color: string;
-=======
+}
+
 interface colorTable {
   expose: boolean;
   id: number;
   photoPath: string;
   remark: string;
->>>>>>> eee713473aca84b1c1fe9988c9b52685f88a7e4f
 }

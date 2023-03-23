@@ -19,7 +19,6 @@ export function Modal({}: Props) {
 
   const colorTableDataHanlder = (data: any) => {
     setColorTable(data);
-    console.log(data);
   };
 
   useEffect(() => {

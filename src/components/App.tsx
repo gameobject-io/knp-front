@@ -1,5 +1,6 @@
 // Import
 import classNames from "classnames/bind";
+import { categoryManager } from "service/categoryManager";
 
 // Components
 import { AppHeader } from "./AppHeader/AppHeader";
@@ -12,8 +13,9 @@ import styles from "./App.module.scss";
 import { Modal } from "./Modal/Modal";
 
 // Store
-import { storeModal } from "store/store";
+import { storeHost, storeModal, storeTags } from "store/store";
 import { useStore } from "@nanostores/react";
+import { useEffect } from "react";
 
 const cx = classNames.bind(styles);
 
@@ -23,6 +25,19 @@ interface Props {
 
 export function App({ page }: Props) {
   const modal = useStore(storeModal);
+  const host = useStore(storeHost);
+  const tags = useStore(storeTags);
+
+  const tagHandler = (data: any) => {
+    storeTags.set(data);
+  };
+
+  useEffect(() => {
+    categoryManager({
+      api: `${host}/apis/v1/fabric-category-legends`,
+      handler: tagHandler,
+    });
+  }, []);
 
   return (
     <>

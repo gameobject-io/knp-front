@@ -50,7 +50,10 @@ export function ProductModal({
             </div>
             <div className={cx("product-detail")}>
               <div className={cx("title")}>
-                <div className={cx("tag", legend.toLocaleLowerCase())}></div>
+                <div
+                  className={cx("tag")}
+                  style={{ backgroundColor: legend }}
+                ></div>
                 <div className={cx("category-name")}>{categoryName}</div>
               </div>
               <div className={cx("opt")}>

@@ -74,30 +74,13 @@
   .image-box {
     position: relative;
     width: 54%;
-    &:after {
-      content: "color";
-      font-size: 0;
+    .color {
       position: absolute;
       top: 2px;
       left: 2px;
       width: calc(100% - 4px);
       height: calc(100% - 4px);
       z-index: 9;
-    }
-    &[data-legend="VISCOSE"] {
-      &:after {
-        background-color: $viscose;
-      }
-    }
-    &[data-legend="COTTON"] {
-      &:after {
-        background-color: $cotton;
-      }
-    }
-    &[data-legend="LINEN"] {
-      &:after {
-        background-color: $linen;
-      }
     }
     .image {
       position: relative;

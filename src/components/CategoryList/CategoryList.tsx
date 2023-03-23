@@ -28,32 +28,17 @@ export function CategoryList({}: Props) {
   const filtering = useStore(storeFiltering);
   const loading = useStore(storeLoading);
   const host = useStore(storeHost);
-<<<<<<< HEAD
   const tags = useStore(storeTags);
 
-=======
->>>>>>> eee713473aca84b1c1fe9988c9b52685f88a7e4f
   const dataHandler = (data: category[]) => {
     storeCategory.set(data);
-    console.log(data);
   };
 
-  const tagHandler = (data: any) => {
-    storeTags.set(data);
-  };
   useEffect(() => {
     categoryManager({
       api: `${host}/apis/v1/fabric-categories`,
       handler: dataHandler,
     });
-<<<<<<< HEAD
-
-    categoryManager({
-      api: `${host}/apis/v1/fabric-category-legends`,
-      handler: tagHandler,
-    });
-=======
->>>>>>> eee713473aca84b1c1fe9988c9b52685f88a7e4f
   }, []);
 
   return (
@@ -93,7 +78,7 @@ export function CategoryList({}: Props) {
               return (
                 <li key={index} className={cx("item")}>
                   <a
-                    href={`/categoryView/?categoryId=${item.id}&categoryName=${item.categoryName}&legend=${item.legend}`}
+                    href={`/categoryView/?categoryId=${item.id}&categoryName=${item.categoryName}&legend=${item.legendId}`}
                     className={cx("link")}
                   >
                     <CategoryCard data={item} />

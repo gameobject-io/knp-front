@@ -21,15 +21,7 @@
   border-radius: 0.35em;
   background-color: #7f859c;
   cursor: pointer;
-<<<<<<< HEAD
   z-index: 100;
-=======
-  @media (max-width: 1200px) {
-    position: static;
-    display: block;
-    margin: 20px auto 0;
-  }
->>>>>>> eee713473aca84b1c1fe9988c9b52685f88a7e4f
 }
 
 .legend {
@@ -39,14 +31,7 @@
   width: 100%;
   box-sizing: border-box;
   margin: 0 12px;
-<<<<<<< HEAD
   z-index: 90;
-=======
-  @media (max-width: 1200px) {
-    width: 90%;
-    justify-content: center;
-  }
->>>>>>> eee713473aca84b1c1fe9988c9b52685f88a7e4f
   .legend-item {
     display: flex;
     margin-right: 20px;
@@ -117,13 +102,7 @@
   font-size: 28px;
   font-weight: 500;
   opacity: 0.5;
-<<<<<<< HEAD
   z-index: 10;
-=======
-  @media (max-width: 1200px) {
-    font-size: 20px;
-  }
->>>>>>> eee713473aca84b1c1fe9988c9b52685f88a7e4f
 }
 
 .loading {

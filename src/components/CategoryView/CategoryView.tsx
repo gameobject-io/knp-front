@@ -13,17 +13,21 @@ const cx = classNames.bind(styles);
 
 // Store
 import { useStore } from "@nanostores/react";
-import { storeHost } from "store/store";
+import { storeHost, storeTags } from "store/store";
+import { sortAndDeduplicateDiagnostics } from "typescript";
 
 interface Props {}
 
 export function CategoryView({}: Props) {
   const [data, setData] = useState<fabricData[] | null>(null);
-  const [legend, setLegend] = useState("");
+  // const [legend, setLegend] = useState("");
   const [categoryName, setCategoryName] = useState("");
   const [selectData, setSelectData] = useState<fabricData | null>(null);
   const [selectOpen, setSelectOpen] = useState(true);
+  const [color, setColor] = useState("");
+
   const host = useStore(storeHost);
+  const tags = useStore(storeTags);
 
   const dataHandler = (data: fabricData[]) => {
     setData(data);
@@ -32,15 +36,10 @@ export function CategoryView({}: Props) {
   const selectHandler = (data: fabricData | null, open: boolean) => {
     setSelectData(data);
     setSelectOpen(open);
-
-    console.log(data);
   };
 
   useEffect(() => {
     const parsed = queryString.parse(location.search);
-    if (parsed.legend !== undefined) {
-      setLegend(String(parsed.legend).toLocaleLowerCase());
-    }
     if (parsed.categoryName !== undefined) {
       setCategoryName(String(parsed.categoryName).toLocaleLowerCase());
     }
@@ -50,6 +49,18 @@ export function CategoryView({}: Props) {
     });
   }, []);
 
+  useEffect(() => {
+    const parsed = queryString.parse(location.search);
+    if (parsed.legend !== undefined) {
+      const legendData = tags.filter(
+        (tagItem) => String(tagItem.id) === String(parsed.legend)
+      )[0];
+      if (legendData !== undefined) {
+        setColor(legendData.color);
+      }
+    }
+  }, [tags]);
+
   return (
     <>
       {selectOpen && selectData !== null && (
@@ -57,12 +68,12 @@ export function CategoryView({}: Props) {
           data={selectData}
           selectHandler={selectHandler}
           categoryName={categoryName}
-          legend={legend}
+          legend={color}
         />
       )}
       <div className={cx("category-view")}>
         <div className={cx("headline")}>
-          <span className={cx("tag", legend)}></span>
+          <span className={cx("tag")} style={{ backgroundColor: color }}></span>
           <span className={cx("title")}>{categoryName}</span>
         </div>
         <div className={cx("category-table")}>
