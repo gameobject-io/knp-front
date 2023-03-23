@@ -1,8 +1,5 @@
 @import "../../styles/common";
 
-$timing: cubic-bezier(0.075, 0.82, 0.165, 1);
-$duration: 0.75s;
-
 .header {
   position: relative;
   width: 100%;
@@ -11,22 +8,9 @@ $duration: 0.75s;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all $duration $timing;
-
   @media (max-width: 1200px) {
     padding-top: 20px;
     height: 240px;
-  }
-
-  &[data-focus="true"] {
-    height: 200px;
-    .logo {
-      top: 35px;
-    }
-    .description {
-      top: 165px;
-      opacity: 0;
-    }
   }
 }
 
@@ -35,7 +19,6 @@ $duration: 0.75s;
   top: 100px;
   left: 50%;
   transform: translateX(-50%);
-  transition: all $duration $timing;
 
   @media (max-width: 1200px) {
     top: 22px;
@@ -62,7 +45,6 @@ $duration: 0.75s;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  transition: all $duration $timing;
   @media (max-width: 1200px) {
     position: static;
     width: 100%;
