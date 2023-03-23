@@ -60,6 +60,9 @@
   &[data-legend="LINEN"] {
     background-color: $linen;
   }
+  @media (max-width: 1200px) {
+    display: none;
+  }
 }
 
 .prd-image {

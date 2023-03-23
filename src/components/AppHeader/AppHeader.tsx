@@ -9,9 +9,14 @@ import { Search } from "components/Search/Search";
 import styles from "./AppHeader.module.scss";
 const cx = classNames.bind(styles);
 
+// Store
+import { useStore } from "@nanostores/react";
+import { storeHost } from "store/store";
+
 interface Props {}
 
 export function AppHeader({}: Props) {
+  const host = useStore(storeHost);
   return (
     <>
       <header className={cx("header")}>
@@ -36,7 +41,7 @@ export function AppHeader({}: Props) {
           </p>
         </div>
         <div className={cx("login")}>
-          <a href="/admin" className={cx("btn-login")}>
+          <a href={`${host}/admin`} className={cx("btn-login")}>
             Admin Login
           </a>
         </div>

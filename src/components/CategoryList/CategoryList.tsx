@@ -5,6 +5,7 @@ import { categoryManager } from "service/categoryManager";
 
 // Components
 import { CategoryCard } from "./CategoryCard";
+import { Loading } from "components/Loading/Loading";
 
 // CSS
 import styles from "./CategoryList.module.scss";
@@ -20,7 +21,6 @@ import {
   storeModal,
   storeTags,
 } from "../../store/store";
-import { Loading } from "components/Loading/Loading";
 
 interface Props {}
 
@@ -28,8 +28,11 @@ export function CategoryList({}: Props) {
   const filtering = useStore(storeFiltering);
   const loading = useStore(storeLoading);
   const host = useStore(storeHost);
+<<<<<<< HEAD
   const tags = useStore(storeTags);
 
+=======
+>>>>>>> eee713473aca84b1c1fe9988c9b52685f88a7e4f
   const dataHandler = (data: category[]) => {
     storeCategory.set(data);
     console.log(data);
@@ -38,17 +41,19 @@ export function CategoryList({}: Props) {
   const tagHandler = (data: any) => {
     storeTags.set(data);
   };
-
   useEffect(() => {
     categoryManager({
       api: `${host}/apis/v1/fabric-categories`,
       handler: dataHandler,
     });
+<<<<<<< HEAD
 
     categoryManager({
       api: `${host}/apis/v1/fabric-category-legends`,
       handler: tagHandler,
     });
+=======
+>>>>>>> eee713473aca84b1c1fe9988c9b52685f88a7e4f
   }, []);
 
   return (

@@ -5,6 +5,9 @@
   width: 100%;
   height: 100%;
   min-height: 500px;
+  @media (max-width: 1200px) {
+    min-height: 500px;
+  }
 }
 
 .btn-color-board {
@@ -18,7 +21,15 @@
   border-radius: 0.35em;
   background-color: #7f859c;
   cursor: pointer;
+<<<<<<< HEAD
   z-index: 100;
+=======
+  @media (max-width: 1200px) {
+    position: static;
+    display: block;
+    margin: 20px auto 0;
+  }
+>>>>>>> eee713473aca84b1c1fe9988c9b52685f88a7e4f
 }
 
 .legend {
@@ -28,7 +39,14 @@
   width: 100%;
   box-sizing: border-box;
   margin: 0 12px;
+<<<<<<< HEAD
   z-index: 90;
+=======
+  @media (max-width: 1200px) {
+    width: 90%;
+    justify-content: center;
+  }
+>>>>>>> eee713473aca84b1c1fe9988c9b52685f88a7e4f
   .legend-item {
     display: flex;
     margin-right: 20px;
@@ -38,6 +56,10 @@
       width: 20px;
       height: 20px;
       border-radius: 2px;
+      @media (max-width: 1200px) {
+        width: 14px;
+        height: 14px;
+      }
       &.viscose {
         background-color: $viscose;
       }
@@ -53,6 +75,10 @@
       color: #353c5d;
       font-weight: 500;
       margin-left: 15px;
+      @media (max-width: 1200px) {
+        font-size: 14px;
+        margin-left: 10px;
+      }
     }
   }
 }
@@ -67,6 +93,10 @@
     box-sizing: border-box;
     cursor: pointer;
     float: left;
+    @media (max-width: 1200px) {
+      width: 50%;
+      height: 50vw;
+    }
     .link {
       display: block;
       height: 100%;
@@ -87,7 +117,13 @@
   font-size: 28px;
   font-weight: 500;
   opacity: 0.5;
+<<<<<<< HEAD
   z-index: 10;
+=======
+  @media (max-width: 1200px) {
+    font-size: 20px;
+  }
+>>>>>>> eee713473aca84b1c1fe9988c9b52685f88a7e4f
 }
 
 .loading {

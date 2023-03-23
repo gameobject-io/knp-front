@@ -11,4 +11,8 @@
   width: 1200px;
   min-height: 500px;
   margin: 120px auto 0;
+  @media (max-width: 1200px) {
+    width: 90%;
+    margin: 70px auto;
+  }
 }
