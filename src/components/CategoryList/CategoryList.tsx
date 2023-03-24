@@ -64,7 +64,7 @@ export function CategoryList({}: Props) {
             storeModal.set(true);
           }}
         >
-          COLOR TABLE
+          NOTICE
         </button>
         {loading ? (
           <div className={cx("loading")}>
