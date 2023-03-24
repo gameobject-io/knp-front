@@ -36,7 +36,7 @@ export function CategoryList({}: Props) {
 
   useEffect(() => {
     categoryManager({
-      api: `${host}/apis/v1/fabric-categories`,
+      api: `/apis/v1/fabric-categories`,
       handler: dataHandler,
     });
   }, []);

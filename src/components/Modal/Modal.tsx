@@ -23,7 +23,7 @@ export function Modal({}: Props) {
 
   useEffect(() => {
     categoryManager({
-      api: `${host}/apis/v1/color-tables/expose`,
+      api: `/apis/v1/color-tables/expose`,
       handler: colorTableDataHanlder,
     });
   }, []);
@@ -43,10 +43,7 @@ export function Modal({}: Props) {
           </button>
           <figure className={cx("figure")}>
             {colorTable !== null && (
-              <img
-                className={cx("image")}
-                src={`${host}${colorTable?.photoPath}`}
-              />
+              <img className={cx("image")} src={`${colorTable?.photoPath}`} />
             )}
           </figure>
         </div>

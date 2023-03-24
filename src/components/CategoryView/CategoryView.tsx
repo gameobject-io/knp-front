@@ -44,7 +44,7 @@ export function CategoryView({}: Props) {
       setCategoryName(String(parsed.categoryName).toLocaleLowerCase());
     }
     categoryManager({
-      api: `${host}/apis/v1/fabrics?categoryId=${parsed.categoryId}`,
+      api: `/apis/v1/fabrics?categoryId=${parsed.categoryId}`,
       handler: dataHandler,
     });
   }, []);
@@ -104,7 +104,7 @@ export function CategoryView({}: Props) {
                         src={
                           item.photoPath === "/images/fabrics/null"
                             ? "/images/fabric-icon.png"
-                            : `${host}${item.photoPath}`
+                            : `${item.photoPath}`
                         }
                       />
                     </td>

@@ -41,7 +41,7 @@ export function AppHeader({}: Props) {
           </p>
         </div>
         <div className={cx("login")}>
-          <a href={`${host}/admin`} className={cx("btn-login")}>
+          <a href={`/admin`} className={cx("btn-login")}>
             Admin Login
           </a>
         </div>

@@ -1,6 +1,6 @@
 import { atom } from "nanostores";
 
-export const storeHost = atom("http://leejuesongtest06.cafe24app.com");
+export const storeHost = atom("");
 export const storeLoading = atom(true);
 export const storeCategory = atom<category[]>([]);
 export const storeFiltering = atom<category[]>([]);

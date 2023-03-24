@@ -44,7 +44,7 @@ export function ProductModal({
                 src={
                   data?.photoPath === "/images/fabrics/null"
                     ? "/images/fabric-icon.png"
-                    : `${host}${data?.photoPath}`
+                    : `${data?.photoPath}`
                 }
               />
             </div>
