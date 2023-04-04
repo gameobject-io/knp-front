@@ -44,7 +44,7 @@ export function CategoryView({}: Props) {
       setCategoryName(String(parsed.categoryName).toLocaleLowerCase());
     }
     categoryManager({
-      api: `/apis/v1/fabrics?categoryId=${parsed.categoryId}`,
+      api: `${host}/apis/v1/fabrics?categoryId=${parsed.categoryId}`,
       handler: dataHandler,
     });
   }, []);

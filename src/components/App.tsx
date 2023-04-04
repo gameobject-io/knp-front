@@ -34,7 +34,7 @@ export function App({ page }: Props) {
 
   useEffect(() => {
     categoryManager({
-      api: `/apis/v1/fabric-category-legends`,
+      api: `${host}/apis/v1/fabric-category-legends`,
       handler: tagHandler,
     });
   }, []);
