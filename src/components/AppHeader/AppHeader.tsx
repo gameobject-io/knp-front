@@ -32,11 +32,9 @@ export function AppHeader({}: Props) {
             </a>
           </h1>
           <p className={cx("description")}>
-            <span className={cx("txt")}>
-              K&P의 제공하는 원단을 검색 해보세요
-            </span>
+            <span className={cx("txt")}>K&P의 제공하는 원사 검색 해보세요</span>
             <span className={cx("txt", "small")}>
-              Please search for the fabrics offered by K&P.
+              Please search for K&P offered yarns.
             </span>
           </p>
         </div>
