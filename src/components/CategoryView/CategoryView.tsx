@@ -80,11 +80,11 @@ export function CategoryView({}: Props) {
           <table className={cx("table")}>
             <thead>
               <tr>
-                <th>위치</th>
+                <th>수량</th>
                 <th>사진</th>
                 <th>컬러명</th>
                 <th>LOT</th>
-                <th>수량</th>
+                <th>위치</th>
                 <th>비고</th>
               </tr>
             </thead>
@@ -97,7 +97,7 @@ export function CategoryView({}: Props) {
                       selectHandler(item, true);
                     }}
                   >
-                    <td>{item.location}</td>
+                    <td>{item.quantity}</td>
                     <td>
                       <img
                         className={cx("image")}
@@ -110,7 +110,7 @@ export function CategoryView({}: Props) {
                     </td>
                     <td>{item.color}</td>
                     <td>{item.lot}</td>
-                    <td>{item.quantity}</td>
+                    <td>{item.location}</td>
                     <td>{item.remark}</td>
                   </tr>
                 );

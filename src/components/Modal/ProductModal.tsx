@@ -59,8 +59,8 @@ export function ProductModal({
               <div className={cx("opt")}>
                 <ul className={cx("list")}>
                   <li className={cx("item")}>
-                    <span className={cx("label")}>위치</span>
-                    <span className={cx("value")}>{data?.location}</span>
+                    <span className={cx("label")}>수량</span>
+                    <span className={cx("value")}>{data?.quantity}</span>
                   </li>
                   <li className={cx("item")}>
                     <span className={cx("label")}>컬러명</span>
@@ -71,8 +71,8 @@ export function ProductModal({
                     <span className={cx("value")}>{data?.lot}</span>
                   </li>
                   <li className={cx("item")}>
-                    <span className={cx("label")}>수량</span>
-                    <span className={cx("value")}>{data?.quantity}</span>
+                    <span className={cx("label")}>위치</span>
+                    <span className={cx("value")}>{data?.location}</span>
                   </li>
                   <li className={cx("item")}>
                     <span className={cx("label")}>비고</span>

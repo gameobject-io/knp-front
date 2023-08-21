@@ -44,19 +44,6 @@ export function CategoryList({}: Props) {
   return (
     <>
       <div className={cx("category")}>
-        <div className={cx("legend")}>
-          {tags.map((item, index) => {
-            return (
-              <dl className={cx("legend-item")} key={index}>
-                <dt
-                  className={cx("tag-name")}
-                  style={{ backgroundColor: item.color }}
-                ></dt>
-                <dd className={cx("tag-deskription")}>{item.legendName}</dd>
-              </dl>
-            );
-          })}
-        </div>
         <button
           type="button"
           className={cx("btn-color-board")}
@@ -88,6 +75,19 @@ export function CategoryList({}: Props) {
             })}
           </ul>
         )}
+        <div className={cx("legend")}>
+          {tags.map((item, index) => {
+            return (
+              <dl className={cx("legend-item")} key={index}>
+                <dt
+                  className={cx("tag-name")}
+                  style={{ backgroundColor: item.color }}
+                ></dt>
+                <dd className={cx("tag-deskription")}>{item.legendName}</dd>
+              </dl>
+            );
+          })}
+        </div>
       </div>
     </>
   );
